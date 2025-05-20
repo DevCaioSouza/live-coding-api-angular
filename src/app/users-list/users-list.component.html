@@ -1,0 +1,19 @@
+<div>
+
+  <button class="btn" (click)="toggleList()">Show / hide list of users</button>
+
+</div>
+
+<div *ngIf="showList">
+
+  <h3>User List: </h3>
+  <ul>
+    <li *ngFor="let item of userList">
+      Id: {{item.id}} <br>
+      Name:  {{item.name}} <br>
+      Email: {{item.email}} <br>
+      <button>DELETE</button>
+    </li>
+  </ul>
+
+</div>
