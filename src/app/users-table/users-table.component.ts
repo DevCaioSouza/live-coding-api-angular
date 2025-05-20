@@ -1,33 +1,15 @@
-import { Component } from '@angular/core';
-import { UserDataComponent } from '../user-data/user-data.component';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-users-table',
-  imports: [UserDataComponent],
   standalone: true,
-  template: `
-
-      <table class="users-table">
-
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-
-        <tr>
-          <td>1</td>
-          <td>Carlos</td>
-          <td>carlos.bol</td>
-        </tr>
-
-      </table>
-
-  `,
+  imports: [CommonModule],
+  templateUrl: './users-table.component.html',
   styleUrl: './users-table.component.scss'
 })
 export class UsersTableComponent {
 
-
+  @Input() appData: any
 
 }
