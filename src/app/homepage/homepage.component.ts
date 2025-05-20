@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { UsersTableComponent } from "../users-table/users-table.component";
 import { DataService } from '../services/data.service';
+import { RegistrationFormComponent } from "../registration-form/registration-form.component";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [UsersTableComponent],
+  imports: [UsersTableComponent, RegistrationFormComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
