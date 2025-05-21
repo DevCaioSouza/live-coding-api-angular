@@ -8,12 +8,19 @@
 
   <h3>User List: </h3>
   <ul>
-    <li *ngFor="let item of userList">
-      Id: {{item.id}} <br>
-      Name:  {{item.name}} <br>
+    <!-- Ideia: Trackear o ID do item que foi deletado e passar essa info pro parent
+          ESSE ID PRECISARIA SER O VALOR DE OUTPUT
+    -->
+
+    @for (item of userList; track item ;let index = $index) {
+    <li>
+      Id: {{item.id}}<br>
+      Name: {{item.name}} <br>
       Email: {{item.email}} <br>
-      <button>DELETE</button>
+      <button (click)="emitDeleteOrder(item.id)">DELETE</button>
     </li>
+
+    }
   </ul>
 
 </div>

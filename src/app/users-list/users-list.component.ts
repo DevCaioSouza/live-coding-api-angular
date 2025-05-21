@@ -12,12 +12,17 @@ import { CommonModule } from '@angular/common';
 export class UsersListComponent {
   @Input() userList: any
 
-  @Output() delete = new EventEmitter()
+  @Output() deleteOrder = new EventEmitter<number>()
 
   showList: boolean = false
 
   toggleList() {
     this.showList = !this.showList
+  }
+
+  emitDeleteOrder(userItem: number) {
+    this.deleteOrder.emit(userItem)
+    console.log(userItem)
   }
 
 }

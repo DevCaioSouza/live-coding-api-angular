@@ -1,8 +1,16 @@
 <h3>HOMEPAGE</h3>
-<app-users-table [appData]="data"></app-users-table> <br>
+
+<app-users-table [appData]="data$"></app-users-table> <br>
 
 <app-registration-form></app-registration-form> <hr>
 
-<app-users-list [userList]="data"></app-users-list>
+<!-- <div *ngFor="let item of data$">
+  <app-users-list [userList]="data$" (delete)="onDeleteItem($event)" [item]="item"></app-users-list>
+</div> -->
+
+<!-- <app-users-list [userList]="data$" (delete)="onDeleteItem($event)"></app-users-list> -->
+
+<app-users-list [userList]="data$" (deleteOrder)="onDeleteItem($event)"></app-users-list>
+
 
 
