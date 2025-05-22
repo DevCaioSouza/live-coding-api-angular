@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { HomepageComponent } from "./homepage/homepage.component";
 import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomepageComponent],
+  imports: [HomepageComponent, RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

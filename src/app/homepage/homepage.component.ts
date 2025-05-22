@@ -4,11 +4,12 @@ import { DataService } from '../services/data.service';
 import { RegistrationFormComponent } from "../registration-form/registration-form.component";
 import { UsersListComponent } from "../users-list/users-list.component";
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CommonModule, UsersTableComponent, RegistrationFormComponent, UsersListComponent],
+  imports: [CommonModule, UsersTableComponent, RegistrationFormComponent, UsersListComponent, NavbarComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
