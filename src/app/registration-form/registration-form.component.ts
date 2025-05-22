@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -11,13 +11,20 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class RegistrationFormComponent {
 
+  @Output() addUserOrder = new EventEmitter<any>()
+
   registrationForm: FormGroup
 
   constructor(private formBuilder: FormBuilder){
     this.registrationForm = this.formBuilder.group({
-      username: ['', Validators.required, Validators.minLength(4)],
+      username: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]]
     })
+  }
+
+  emitAddUserOrder(userItem: any){
+    this.addUserOrder.emit(userItem)
+    console.log('Registration form log: ', userItem)
   }
 
   onSubmit(){
