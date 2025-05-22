@@ -6,7 +6,7 @@ import { DataService } from './services/data.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomepageComponent, RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
