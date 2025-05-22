@@ -4,7 +4,7 @@
 
 <app-users-table [appData]="data$"></app-users-table> <br>
 
-<app-registration-form></app-registration-form> <hr>
+<app-registration-form (addUserOrder)="onAddUser($event)"></app-registration-form> <hr>
 
 <!-- <div *ngFor="let item of data$">
   <app-users-list [userList]="data$" (delete)="onDeleteItem($event)" [item]="item"></app-users-list>

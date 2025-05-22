@@ -15,22 +15,23 @@ export class RegistrationFormComponent {
 
   registrationForm: FormGroup
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder) {
     this.registrationForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(4)]],
+      name: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]]
     })
   }
 
-  emitAddUserOrder(userItem: any){
+  emitAddUserOrder(userItem: any) {
     this.addUserOrder.emit(userItem)
     console.log('Registration form log: ', userItem)
   }
 
-  onSubmit(){
-    if(this.registrationForm.valid) {
-      console.log(`Registration form values: ${this.registrationForm.value}`)
+  onSubmit() {
+    if (this.registrationForm.valid) {
+      this.emitAddUserOrder(this.registrationForm.value)
     }
+
   }
 
 }

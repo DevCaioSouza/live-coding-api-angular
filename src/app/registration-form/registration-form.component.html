@@ -1,11 +1,11 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
   <div>
-    <label for="username">User Name: </label>
-    <input type="text" id="username" formControlName="username">
+    <label for="name">User Name: </label>
+    <input type="text" id="name" formControlName="name">
     <div
-      *ngIf="registrationForm.get('username')?.invalid && (registrationForm.get('username')?.dirty || registrationForm.get('username')?.touched)">
-      <small *ngIf="registrationForm.get('username')?.errors?.['required']">First name is required.</small>
+      *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)">
+      <small *ngIf="registrationForm.get('name')?.errors?.['required']">First name is required.</small>
     </div>
   </div>
 

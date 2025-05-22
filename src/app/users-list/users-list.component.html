@@ -14,7 +14,7 @@
 
     @for (item of userList; track item ;let index = $index) {
     <li>
-      Id: {{item.id}}<br>
+      Id: {{index + 1}}<br>
       Name: {{item.name}} <br>
       Email: {{item.email}} <br>
       <button (click)="emitDeleteOrder(item.id)">DELETE</button>

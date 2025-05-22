@@ -25,6 +25,12 @@ export class HomepageComponent implements OnInit {
     console.log('valor do newData$: ', newData$)
   }
 
+  onAddUser(value: any){
+    value.id = 1
+    this.data$.unshift(value)
+    console.log(value)
+  }
+
   ngOnInit(): void {
     this.dataService.getUserList().subscribe(res => {
       this.data$ = res
